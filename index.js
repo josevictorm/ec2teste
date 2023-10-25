@@ -1,12 +1,11 @@
-import express from 'express'
-const app = express()
+import fastify from "fastify";
 
-const port = 3000;
+const app = fastify()
 
 app.get('/', (req, res) => {
-  return res.send("está funcionando")
+  return res.send('servidor funcionando milkwise')
 })
 
-app.listen(port, () => {
-  console.log('servidor inciado na porta' + port)
+app.listen({port:3333,}).then(() => {
+  console.log('servidor iniciado')
 })
